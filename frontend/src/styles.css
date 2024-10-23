@@ -1,0 +1,122 @@
+/* styles.css */
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.chat-container {
+  display: flex;
+  height: calc(100% - 64px); /* Adjust for header height */
+}
+
+.user-list {
+  width: 250px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
+}
+
+.chat-room {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.message-input {
+  padding: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.message.self {
+  justify-content: flex-end;
+}
+
+.message.other {
+  justify-content: flex-start;
+}
+
+.message .message-content {
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 16px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.message.self .message-content {
+  background-color: #6C63FF;
+  color: #fff;
+}
+
+.message.other .message-content {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+.message .message-info {
+  font-size: 12px;
+  color: gray;
+  margin-top: 4px;
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.message .message-content {
+    /* Existing styles... */
+    word-break: break-word;
+  }
+  
+  /* Additional styles for file links */
+  .message-content a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  
+  /* Style for the filename in the input field */
+  .message-input .MuiInputAdornment-root {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+@media (max-width: 600px) {
+  .chat-container {
+    flex-direction: column;
+    height: calc(100% - 56px); /* Adjust for header height on mobile */
+  }
+
+  .user-list {
+    width: 100%;
+    height: 100px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .chat-room {
+    flex: 1;
+  }
+}
